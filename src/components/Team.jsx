@@ -34,9 +34,9 @@ const teamMembers = [
 ];
 function Team() {
 	return (
-		<div className="container mx-auto slide-right py-12 px-4" id="team">
+		<div className="container mx-auto   py-12 px-4" id="team">
 			<h2 className="text-4xl font-bold text-center headingText  mb-8">Meet Our Team</h2>
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 slide-bottom gap-8">
 				{teamMembers.map((member, index) => (
 					<div key={index} className="bg-[#ffc872] p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
 						<img src={member.image} alt={`Photo of ${member.name}`} className="w-full h-48 object-none roundedlg mb-4" />
