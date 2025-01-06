@@ -26,9 +26,11 @@ function Contact() {
 			<div className="bg-[#ffe0a9] p-6 rounded-lg shadow-lg">
 				<div className="mb-6">
 					<h3 className="text-lg font-medium text-[#fd8a12]">Contact Information</h3>
-					<p className="text-gray-700 mt-2">Email: info@savethegirlchildfoundation.org</p>
-					<p className="text-gray-700 mt-2">Phone: +234 123 456 7890</p>
+					<p className="text-gray-700 mt-2">Email: adunnisaveagirlfoundation@gmail.com</p>
+					<p className="text-gray-700 mt-2">Phone: +2347013805937 OR +2347068069737</p>
 					<p className="text-gray-700 mt-2">Address: 123 Foundation Street, Lagos, Nigeria</p>
+				
+
 				</div>
 				<form onSubmit={handleSubmit} className="space-y-4">
 					<div>

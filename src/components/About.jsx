@@ -23,7 +23,7 @@ function About() {
 							Education
 						</h3>
 						<p className="text-clementine-500-bg">
-							Over 10,000 girls provided with quality education and learning resources.
+							To provide girls  with quality education and learning resources.
 						</p>
 					</div>
 					<div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition duration-300 ease-in-out hover:scale-105">
@@ -36,7 +36,7 @@ function About() {
 							Healthcare
 						</h3>
 						<p className="text-clementine-500-bg">
-							Access to healthcare services for over 5,000 girls in rural areas.
+							To give access to healthcare services for  girls in rural areas.
 						</p>
 					</div>
 					<div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition duration-300 ease-in-out hover:scale-105">
@@ -49,7 +49,7 @@ function About() {
 							Empowerment
 						</h3>
 						<p className="text-gray-700 text-clementine-500-bg">
-							Empowering over 8,000 girls through skill development and mentorship programs.
+							To empower girls through skill development and mentorship programs.
 						</p>
 					</div>
 				</div>
