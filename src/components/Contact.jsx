@@ -31,7 +31,7 @@ function Contact() {
   };
 
   return (
-    <div className="max-w-60 mx-auto p-2 slide-right" id="contact">
+    <div className="max-w-screen mx-auto p-2 slide-right" id="contact">
       <h2 className="text-2xl font-bold headingText mb-6">Contact Us</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
@@ -92,9 +92,9 @@ function Contact() {
           </form>
         </div>
         
-        <div>
+        {/* <div>
           <Qr />
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-6 flex justify-center space-x-4">
