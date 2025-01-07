@@ -31,11 +31,11 @@ function Contact() {
   };
 
   return (
-    <div className="max-w-30 mx-auto p-6 slide-right" id="contact">
+    <div className="max-w-60 mx-auto p-2 slide-right" id="contact">
       <h2 className="text-2xl font-bold headingText mb-6">Contact Us</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-[#ffe0a9] p-6 rounded-lg shadow-lg">
+        <div className="bg-[#ffe0a9] p-2 rounded-lg shadow-lg">
           <div className="mb-6">
             <h3 className="text-lg font-medium text-[#fd8a12]">Contact Information</h3>
             <p className="text-gray-700 mt-2">
