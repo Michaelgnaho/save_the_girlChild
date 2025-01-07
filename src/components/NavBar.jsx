@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Logo from "../assets/logoAdunni.jpg"
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,7 @@ function NavBar() {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="text-2xl font-bold text-[#fd8a12]">
-            ADUNNI
-          </a>
+          <img src={Logo} alt="LOGO" className="size-12 rounded-lg" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

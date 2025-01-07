@@ -1,13 +1,15 @@
 import React from 'react'
+import Logo from "../assets/logoAdunni.jpg"
+
 
 function Footer() {
 	return (
 		<footer className="bg-[#7e3710] text-white py-10" id="footer">
 			<div className="max-w-6xl mx-auto px-4">
 				<div className="flex flex-col md:flex-row justify-between items-center">
-					<div className="mb-6 md:mb-0">
-						<img src="https://placehold.co/150x50" alt="Save the Girl Child Foundation logo with a silhouette of a girl and the foundation's name" className="mb-4"/>
-						<p className="text-sm">
+					<div className="flex max-w-4xl p-3 mb-6 md:mb-0">
+						<img src={Logo} alt="Save the Girl Child Foundation logo with a silhouette of a girl and the foundation's name" className=" size-12 rounded-lg mb-4"/>
+						<p className="text-sm mx-4">
 							Our mission is to empower and educate young girls in Nigeria, providing them with the resources and support they need to thrive.
 						</p>
 					</div>
