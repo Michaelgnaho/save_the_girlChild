@@ -31,7 +31,7 @@ function Contact() {
   };
 
   return (
-    <div className="max-w-screen mx-auto p-6 slide-right" id="contact">
+    <div className="flex mx-auto p-6 slide-right" id="contact">
       <h2 className="text-2xl font-bold headingText mb-6">Contact Us</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
