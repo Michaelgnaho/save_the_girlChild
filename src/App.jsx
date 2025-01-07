@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar.jsx";
 import Project from "./components/Project.jsx";
 import Team from "./components/Team.jsx";
 import Testimonials from "./components/Testimonials.jsx";
+import Qr from "./components/Qr.jsx";
 import "./main.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <Team/>
     <CTA/>
     <Contact/>
+    <Qr/>
     <FAQ/>
     <Footer/>
     
