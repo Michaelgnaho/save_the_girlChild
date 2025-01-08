@@ -32,7 +32,7 @@ const teamMembers = [
 		image: "https://placehold.co/300x300?text=Patricia+Brown&bg=ffc872"
 	}
 ];
-function Team() {
+
 	function Team() {
 		return (
 			<div className="container mx-auto py-12 px-4" id="team">
@@ -60,6 +60,5 @@ function Team() {
 		);
 	}
 	
-}
 
 export default Team
