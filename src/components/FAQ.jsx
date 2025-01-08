@@ -91,7 +91,7 @@ function FAQ() {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-gradient-to-br from-orange-100 via-amber-50 to-orange-50" id="faq">
+    <div className="max-w-3xl mx-auto p-6 bg-gradient-to-b from-white to-orange-50" id="faq">
       <motion.h2
         className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 mb-8"
         initial={{ opacity: 0, y: 20 }}

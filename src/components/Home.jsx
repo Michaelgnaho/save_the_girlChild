@@ -17,7 +17,7 @@ function Home() {
           Your browser does not support the video tag.
         </video>
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-orange-100 shadow-lg backdrop-blur-none bg-opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white to-orange-50  backdrop-blur-none bg-opacity-30"></div>
       </div>
 
       {/* Content Container */}

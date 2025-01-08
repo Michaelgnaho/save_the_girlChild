@@ -71,7 +71,7 @@ const teamMembers = [
 
 function Team() {
 	return (
-		<div className="container mx-auto py-12 px-4" id="team">
+		<div className="container bg-gradient-to-b from-white to-orange-50 mx-auto py-12 px-4" id="team">
 			<h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-16">
 				Meet Our Team
 			</h2>

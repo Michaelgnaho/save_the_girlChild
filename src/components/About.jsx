@@ -5,7 +5,7 @@ import about3 from "../assets/a4.jpg";
 
 function About() {
   return (
-    <div className="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-50 py-16" id="about">
+    <div className="bg-gradient-to-b from-white to-orange-50 py-16" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mission Section */}
         <div className="text-center mb-16">
