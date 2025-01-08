@@ -100,7 +100,7 @@ function CTA() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 1 }}
-        className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4"
+        className="text-4xl slide-middle md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4"
       >
         Save the Girl Child Foundation
       </motion.h2>
@@ -126,7 +126,7 @@ function CTA() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleDonate}
-          className="bg-[#fd8a12] text-white font-bold py-2 px-4 rounded transition duration-300 headingText"
+          className="bg-[#fd8a12] slide-left text-white font-bold py-2 px-4 rounded transition duration-300 headingText"
         >
           Donate Now
         </motion.button>
@@ -134,7 +134,7 @@ function CTA() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsVolunteerModalOpen(true)}
-          className="bg-[#fd8a12] text-white font-bold py-2 px-4 rounded transition duration-300 headingText"
+          className="bg-[#fd8a12] slide-right text-white font-bold py-2 px-4 rounded transition duration-300 headingText"
         >
           Volunteer
         </motion.button>
