@@ -33,21 +33,33 @@ const teamMembers = [
 	}
 ];
 function Team() {
-	return (
-		<div className="container mx-auto   py-12 px-4" id="team">
-			<h2 className="text-4xl font-bold text-center headingText  mb-8">Meet Our Team</h2>
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 slide-bottom gap-8">
-				{teamMembers.map((member, index) => (
-					<div key={index} className="bg-[#ffc872] p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
-						<img src={member.image} alt={`Photo of ${member.name}`} className="w-full h-48 object-none roundedlg mb-4" />
-						<h3 className="text-2xl font-bold text-[#fd8a12] mb-2">{member.name}</h3>
-						<h4 className="text-xl text-gray-800 mb-2">{member.role}</h4>
-						<p className="text-gray-700">{member.description}</p>
-					</div>
-				))}
+	function Team() {
+		return (
+			<div className="container mx-auto py-12 px-4" id="team">
+				<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-8">
+					Meet Our Team
+				</h2>
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+					{teamMembers.map((member, index) => (
+						<div
+							key={index}
+							className="bg-gradient-to-br from-orange-100 via-amber-50 to-orange-50 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
+						>
+							<img
+								src={member.image}
+								alt={`Photo of ${member.name}`}
+								className="w-full h-48 object-cover rounded-lg mb-4"
+							/>
+							<h3 className="text-2xl font-bold text-orange-600 mb-2">{member.name}</h3>
+							<h4 className="text-xl text-gray-800 mb-2">{member.role}</h4>
+							<p className="text-gray-700">{member.description}</p>
+						</div>
+					))}
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
+	
 }
 
 export default Team

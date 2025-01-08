@@ -1,61 +1,73 @@
-import React from 'react'
+import React from 'react';
+import about1 from "../assets/educaion.jpg";
+import about2 from "../assets/health.jpg";
+import about3 from "../assets/a4.jpg";
 
 function About() {
-	return (
-		<div className="bg-clementine-50-bg py-12 " id='about'>
-			<div className="max-w-7xl mx-auto px-4 ani sm:px-6 lg:px-8">
-				<div className="text-center slide-middle mb-12">
-					<h2 className="text-3xl md:text-5xl font-bold headingText mb-4 slide-right">
-						Our Mission
-					</h2>
-					<p className="text-lg md:text-xl text-clementine-500-bg ">
-						At Save the Girl Child Foundation, we are dedicated to empowering young girls in Nigeria to achieve their dreams and build a brighter future.
-					</p>
-				</div>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 slide-left">
-					<div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition duration-300 ease-in-out hover:scale-105">
-						<img 
-							src="https://placehold.co/100x100" 
-							alt="Icon representing education with a book and graduation cap" 
-							className="mx-auto mb-4"
-						/>
-						<h3 className="text-2xl font-bold text-clementine-500-bg mb-2">
-							Education
-						</h3>
-						<p className="text-clementine-500-bg">
-							To provide girls  with quality education and learning resources.
-						</p>
-					</div>
-					<div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition duration-300 ease-in-out hover:scale-105">
-						<img 
-							src="https://placehold.co/100x100" 
-							alt="Icon representing healthcare with a stethoscope and heart" 
-							className="mx-auto mb-4"
-						/>
-						<h3 className="text-2xl font-bold mb-2 text-clementine-500-bg">
-							Healthcare
-						</h3>
-						<p className="text-clementine-500-bg">
-							To give access to healthcare services for  girls in rural areas.
-						</p>
-					</div>
-					<div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition duration-300 ease-in-out hover:scale-105">
-						<img 
-							src="https://placehold.co/100x100" 
-							alt="Icon representing empowerment with a raised fist" 
-							className="mx-auto mb-4"
-						/>
-						<h3 className="text-2xl font-bold text-clementine-500-bg mb-2">
-							Empowerment
-						</h3>
-						<p className="text-gray-700 text-clementine-500-bg">
-							To empower girls through skill development and mentorship programs.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-50 py-16" id="about">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Mission Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 bg-clip-text text-transparent">
+            Our Mission
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-4">
+            <p className="text-lg md:text-xl text-gray-700">
+              At Adunni Save A Girl Foundation, we are dedicated to nurturing and empowering young girls to achieve their dreams and build brighter futures.
+            </p>
+            <p className="text-lg md:text-xl text-gray-700">
+              Currently focused on girls in Nigeria, we provide education, mentorship, and advocacy to nurture their potential, break barriers, and equip them with the knowledge, skills, and confidence needed for self-actualization.
+            </p>
+            <p className="text-lg md:text-xl text-gray-700">
+              As we grow, our goal is to expand this impact globally, creating a world where every girl can dream, achieve, and lead with purpose.
+            </p>
+          </div>
+        </div>
+
+        {/* Cards Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Education",
+              description: "We are committed to providing young girls with access to quality education and the necessary learning resources, empowering them to unlock their full potential and achieve their dreams.",
+              image: about1
+            },
+            {
+              title: "Healthcare",
+              description: "We aim to ensure girls in underserved and rural areas have access to essential healthcare services, fostering their well-being and growth",
+              image: about2
+            },
+            {
+              title: "Empowerment",
+              description: "Through skill development and mentorship programs, we empower young girls to become confident, independent, and capable of building a brighter future for themselves and their communities",
+              image: about3
+            }
+          ].map((card, index) => (
+            <div key={index} className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-lg transform transition duration-300 ease-in-out group-hover:-translate-y-2">
+                <div className="overflow-hidden rounded-lg mb-6">
+                  <img 
+                    src={card.image}
+                    alt={`Icon representing ${card.title}`}
+                    className="w-full h-48 object-cover transform transition duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  {card.title}
+                </h3>
+                <p className="text-gray-700">
+                  {card.description}
+                </p>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-xl"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default About;
