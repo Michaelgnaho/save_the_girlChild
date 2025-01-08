@@ -56,7 +56,7 @@ const Project = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-100 via-amber-50 to-orange-50 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-orange-100 via-amber-50 to-orange-50 py-16" id="programs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">

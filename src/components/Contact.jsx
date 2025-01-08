@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Qr from './Qr';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
       [name]: value
     }));
@@ -19,9 +19,14 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Here you would typically send the form data to your backend
-      console.log('Form submitted:', formData);
-      // Clear form after successful submission
+      // Create mailto link with form data
+      const emailBody = `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Message: ${formData.message}
+      `;
+      window.location.href = `mailto:adunnisaveagirlfoundation@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(emailBody)}`;
+      
       setFormData({ name: '', email: '', message: '' });
       alert('Message sent successfully!');
     } catch (error) {
@@ -30,98 +35,124 @@ function Contact() {
     }
   };
 
+  const contactInfo = [
+    {
+      title: "Email",
+      content: "adunnisaveagirlfoundation@gmail.com",
+      link: "mailto:adunnisaveagirlfoundation@gmail.com"
+    },
+    {
+      title: "Phone",
+      content: "+2347013805937 | +2347068069737",
+      link: "tel:+2347013805937"
+    },
+    {
+      title: "Address",
+      content: "7, Church Street, Igbogbo, Ikorodu, Lagos, Nigeria.",
+      link: "https://maps.google.com/?q=7,Church Street,Igbogbo,Ikorodu,Lagos,Nigeria"
+    }
+  ];
+
   return (
-    <div className="max-w-screen mx-auto p-2 slide-right" id="contact">
-      <h2 className="text-2xl font-bold headingText mb-6">Contact Us</h2>
-      
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-[#ffe0a9] p-2 rounded-lg shadow-lg">
-          <div className="mb-6">
-            <h3 className="text-lg font-medium text-[#fd8a12]">Contact Information</h3>
-            <p className="text-gray-700 mt-2">
-              Email: adunnisaveagirlfoundation@gmail.com
-            </p>
-            <p className="text-gray-700 mt-2">
-              Phone: +2347013805937 OR +2347068069737
-            </p>
-            <p className="text-gray-700 mt-2">
-              Address: 7, Church Street, Igbogbo, Ikorodu, Lagos, Nigeria.
-            </p>
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-orange-50 py-16 px-4" id="contact">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">
+            Get in Touch
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            We're here to help and answer any questions you might have. We look forward to hearing from you.
+          </p>
+        </motion.div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-gray-700">Name</label>
-              <input 
-                type="text" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fd8a12] focus:border-transparent"
-                required 
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700">Email</label>
-              <input 
-                type="email" 
-                name="email" 
-                value={formData.email} 
-                onChange={handleChange} 
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fd8a12] focus:border-transparent"
-                required 
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700">Message</label>
-              <textarea 
-                name="message" 
-                value={formData.message} 
-                onChange={handleChange} 
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fd8a12] focus:border-transparent"
-                rows="4"
-                required 
-              ></textarea>
-            </div>
-            <button 
-              type="submit" 
-              className="w-full bg-[#fd8a12] text-white p-2 rounded-lg hover:bg-[#e96c08] transition duration-300 transform hover:scale-105"
-            >
-              Send Message
-            </button>
-          </form>
+        <div className="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="space-y-8"
+          >
+            {contactInfo.map((info, index) => (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
+              >
+                <h3 className="text-xl font-semibold text-orange-500 mb-2">{info.title}</h3>
+                <a
+                  href={info.link}
+                  className="text-gray-600 hover:text-orange-500 transition-colors duration-300"
+                >
+                  {info.content}
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="bg-white p-8 rounded-lg shadow-lg"
+          >
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {[
+                { name: 'name', type: 'text', label: 'Your Name' },
+                { name: 'email', type: 'email', label: 'Your Email' },
+                { name: 'message', type: 'textarea', label: 'Your Message' }
+              ].map((field, index) => (
+                <motion.div
+                  key={field.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
+                >
+                  <label className="block text-gray-700 font-medium mb-2">
+                    {field.label}
+                  </label>
+                  {field.type === 'textarea' ? (
+                    <textarea
+                      name={field.name}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-300"
+                      rows="4"
+                      required
+                    />
+                  ) : (
+                    <input
+                      type={field.type}
+                      name={field.name}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-300"
+                      required
+                    />
+                  )}
+                </motion.div>
+              ))}
+              
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-md hover:shadow-lg"
+                type="submit"
+              >
+                Send Message
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
-        
-        {/* <div>
-          <Qr />
-        </div> */}
-      </div>
-
-      <div className="mt-6 flex justify-center space-x-4">
-        <a 
-          href="https://facebook.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-[#fd8a12] hover:text-[#e96c08] transition duration-300 hover:scale-110"
-        >
-          <i className="fab fa-facebook-f text-2xl"></i>
-        </a>
-        <a 
-          href="https://twitter.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-[#fd8a12] hover:text-[#e96c08] transition duration-300 hover:scale-110"
-        >
-          <i className="fab fa-twitter text-2xl"></i>
-        </a>
-        <a 
-          href="https://instagram.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-[#fd8a12] hover:text-[#e96c08] transition duration-300 hover:scale-110"
-        >
-          <i className="fab fa-instagram text-2xl"></i>
-        </a>
       </div>
     </div>
   );

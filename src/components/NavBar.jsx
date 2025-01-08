@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Logo from "../assets/logoAdunni.jpg"
+import Logo from "../assets/logoAdunni.jpg";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +13,27 @@ function NavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Create a mapping object for special cases
+  const idMapping = {
+    'About Us': 'about',
+    'Home': 'home',
+    'Programs': 'programs',
+    'Testimonials': 'testimonials',
+    'Team': 'team',
+    'Donate': 'donate',
+    'Contact': 'contact',
+    'FAQ': 'faq'
+  };
+
+  const getHref = (item) => {
+    return `#${idMapping[item] || item.toLowerCase()}`;
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-gradient-to-r from-orange-900 via-amber-800 to-orange-900 shadow-lg backdrop-blur-sm bg-opacity-95' 
-        : 'bg-gradient-to-r from-orange-800 via-amber-700 to-orange-800'
+        ? 'bg-white shadow-lg backdrop-blur-sm bg-opacity-95' 
+        : 'bg-white'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
@@ -31,10 +47,10 @@ function NavBar() {
             {['Home', 'About Us', 'Programs', 'Testimonials', 'Team', 'Donate', 'Contact'].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase().replace(' ', '')}`}
+                href={getHref(item)}
                 className="relative group"
               >
-                <span className="text-orange-100 hover:text-amber-200 transition-colors duration-200">
+                <span className="text-[#7e3710] hover:text-amber-500 transition-colors duration-200">
                   {item}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
@@ -69,11 +85,11 @@ function NavBar() {
             : 'opacity-0 max-h-0 invisible'
         }`}>
           <div className="py-4 space-y-2">
-            {['Home', 'About Us', 'Programs', 'Testimonials', 'Team', 'Donate', 'Contact'].map((item) => (
+            {['Home', 'About Us', 'Programs', 'Testimonials', 'Team', 'Donate', 'Contact', 'Faq'].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase().replace(' ', '')}`}
-                className="block py-2 px-4 text-orange-100 hover:bg-gradient-to-r hover:from-orange-700 hover:to-amber-700 rounded transition-all duration-200 hover:text-amber-200"
+                href={getHref(item)}
+                className="block py-2 px-4 text-[#7e3710] hover:bg-gradient-to-r hover:from-orange-700 hover:to-amber-700 rounded transition-all duration-200 hover:text-amber-200"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
@@ -84,6 +100,6 @@ function NavBar() {
       </div>
     </nav>
   );
-};
+}
 
 export default NavBar;
