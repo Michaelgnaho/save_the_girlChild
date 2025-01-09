@@ -53,7 +53,7 @@ function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-orange-50 py-8 sm:py-16 px-4" id="contact">
+    <div className="min-h-screen slide-right bg-gradient-to-b from-white to-orange-50 py-8 sm:py-16 px-4" id="contact">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ function Contact() {
           transition={{ duration: 1 }}
           className="text-center mb-8 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl slide-left sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">
             Get in Touch
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto px-4">
