@@ -14,7 +14,7 @@ const Qr = () => {
   `.trim();
 
   return (
-    <div className="max-w-sm mx-auto slide-right bg-white rounded-lg shadow-lg overflow-hidden p-6 text-center my-8">
+    <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden p-6 text-center my-8">
       <img 
         src={Profile}// Updated to use public path
         alt="Sen. Olafare Comfort Oladunni" 
@@ -72,3 +72,4 @@ const Qr = () => {
 };
 
 export default Qr;
+

@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import vid from "../assets/bgVid.mp4";
+import bgImg from "../assets/a13.jpg";
+
 
 function Home() {
   return (
     <div className="relative h-screen w-full overflow-hidden" id="home">
       {/* Video Background */}
       <div className="absolute inset-0">
-        <video 
+        {/* <video 
           autoPlay 
           loop 
           muted 
@@ -16,7 +18,8 @@ function Home() {
         >
           <source src={vid} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
+        <img src={bgImg} alt='background image' className='object-cover'/>
         {/* Enhanced Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
       </div>
