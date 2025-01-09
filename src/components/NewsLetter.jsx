@@ -86,7 +86,7 @@ const Newsletter = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-green-600 text-center mt-4"
               >
-                Thank you for subscribing! Please check your email to confirm.
+                Thank you for subscribing!
               </motion.p>
             )}
           </div>
@@ -97,3 +97,5 @@ const Newsletter = () => {
 };
 
 export default Newsletter;
+
+// Comfortolafare=2025
