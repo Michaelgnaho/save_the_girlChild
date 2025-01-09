@@ -12,7 +12,7 @@ function Home() {
           loop 
           muted 
           playsInline
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full object-top"
         >
           <source src={vid} type="video/mp4" />
           Your browser does not support the video tag.
