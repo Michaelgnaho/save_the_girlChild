@@ -19,7 +19,7 @@ function Home() {
           <source src={vid} type="video/mp4" />
           Your browser does not support the video tag.
         </video> */}
-        <img src={bgImg} alt='background image' className='object-cover'/>
+        <img src={bgImg} alt='background image' className='absolute w-full h-full object-cover'/>
         {/* Enhanced Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
       </div>
