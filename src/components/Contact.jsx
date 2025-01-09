@@ -53,7 +53,7 @@ function Contact() {
   ];
 
   return (
-    <div className="min-h-screen slide-right bg-gradient-to-b from-white to-orange-50 py-8 sm:py-16 px-4" id="contact">
+    <div className="min-h-screen  bg-gradient-to-b from-white to-orange-50 py-8 sm:py-16 px-4" id="contact">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,21 +61,21 @@ function Contact() {
           transition={{ duration: 1 }}
           className="text-center mb-8 sm:mb-16"
         >
-          <h2 className="text-3xl slide-left sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl  sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">
             Get in Touch
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto px-4">
+          <p className="text-gray-600 slide-right text-sm sm:text-base max-w-2xl mx-auto px-4">
             We're here to help and answer any questions you might have. We look forward to hearing from you.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 slide-left md:grid-cols-2 gap-6 md:gap-8 items-start max-w-5xl mx-auto">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="space-y-4 sm:space-y-8 order-2 md:order-1"
+            className="space-y-4 slide-left sm:space-y-8 order-2 md:order-1"
           >
             {contactInfo.map((info, index) => (
               <motion.div
@@ -101,7 +101,7 @@ function Contact() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="bg-white p-4 sm:p-8 rounded-lg shadow-lg order-1 md:order-2"
+            className="bg-white slide-right p-4 sm:p-8 rounded-lg shadow-lg order-1 md:order-2"
           >
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">

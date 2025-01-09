@@ -9,24 +9,24 @@ function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mission Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl slide-middle md:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl  md:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 bg-clip-text text-transparent">
             Our Mission
           </h2>
           <div className="max-w-4xl mx-auto space-y-4">
-            <p className="text-lg slide-middle md:text-xl text-gray-700">
+            <p className="text-lg slide-left md:text-xl text-gray-700">
               At Adunni Save A Girl Foundation, we are dedicated to nurturing and empowering young girls to achieve their dreams and build brighter futures.
             </p>
-            <p className="text-lg slide-middle md:text-xl text-gray-700">
+            <p className="text-lg slide-right md:text-xl text-gray-700">
               Currently focused on girls in Nigeria, we provide education, mentorship, and advocacy to nurture their potential, break barriers, and equip them with the knowledge, skills, and confidence needed for self-actualization.
             </p>
-            <p className="text-lg slide-middle md:text-xl text-gray-700">
+            <p className="text-lg slide-left md:text-xl text-gray-700">
               As we grow, our goal is to expand this impact globally, creating a world where every girl can dream, achieve, and lead with purpose.
             </p>
           </div>
         </div>
 
         {/* Cards Section */}
-        <div className="grid slide-left grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid  grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
               title: "Education",
@@ -44,7 +44,7 @@ function About() {
               image: about3
             }
           ].map((card, index) => (
-            <div key={index} className="group relative">
+            <div key={index} className="group slide-right relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
               <div className="relative bg-white p-6 rounded-2xl shadow-lg transform transition duration-300 ease-in-out group-hover:-translate-y-2">
                 <div className="overflow-hidden rounded-lg mb-6">
