@@ -2,7 +2,6 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import CTA from "./components/CTA.jsx";
 import FAQ from "./components/FAQ.jsx";
-import Donate from "./components/FAQ.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./components/Home.jsx";
 import NavBar from "./components/NavBar.jsx";
@@ -11,6 +10,7 @@ import Team from "./components/Team.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 import Qr from "./components/Qr.jsx";
 import "./main.css";
+import Newsletter from "./components/NewsLetter.jsx";
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
     <CTA/>
     <Contact/>
     <Qr/>
+    <Newsletter/>
     <FAQ/>
     <Footer/>
     
