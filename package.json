@@ -13,7 +13,6 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-slot": "^1.1.1",
-    "firebase": "^11.2.0",
     "framer-motion": "^11.16.1",
     "install": "^0.13.0",
     "lucide-react": "^0.474.0",
