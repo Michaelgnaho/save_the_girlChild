@@ -14,6 +14,7 @@ import Newsletter from "./components/NewsLetter.jsx";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import LoginPage from "../../ecss/src/pages/LoginPage.jsx";
 import Register from "./Pages/RegisterPage.jsx";
+import ComfortChatbot from "./components/Chatbot.jsx";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Newsletter />
               <FAQ />
               <Footer />
+              <ComfortChatbot />
             </div>
           }
         />
