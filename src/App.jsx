@@ -11,28 +11,46 @@ import Testimonials from "./components/Testimonials.jsx";
 import Qr from "./components/Qr.jsx";
 import "./main.css";
 import Newsletter from "./components/NewsLetter.jsx";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import LoginPage from "../../ecss/src/pages/LoginPage.jsx";
+import Register from "./Pages/RegisterPage.jsx";
 
 function App() {
-
   return (
-    <div className="">
-    <NavBar/>
-    <Home/>
-    <About/>
-    <Project/>
-    <Testimonials/>
-    <Team/>
-    <CTA/>
-    <Contact/>
-    <Qr/>
-    <Newsletter/>
-    <FAQ/>
-    <Footer/>
-    
-    
-
-     </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="">
+              <NavBar />
+              <Home />
+              <About />
+              <Project />
+              <Testimonials />
+              <Team />
+              <CTA />
+              <Contact />
+              {/* <Qr/> */}
+              <Newsletter />
+              <FAQ />
+              <Footer />
+            </div>
+          }
+        />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signUp" element={<Register />} />
+        <Route
+          path="*"
+          element={
+            <div className="text-5xl justify-center items-center flex ">
+              404 Not Found
+            </div>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
