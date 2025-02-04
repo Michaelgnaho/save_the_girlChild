@@ -103,7 +103,7 @@ function Home() {
           </div>
         </motion.div>
       </div>
-      {/* <Chatbot /> */}
+      <Chatbot />
     </div>
   );
 }
