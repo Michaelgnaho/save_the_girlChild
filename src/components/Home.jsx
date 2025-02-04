@@ -1,25 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import vid from "../assets/bgVid.mp4";
+import Chatbot from "./Chatbot.jsx";
 import bgImg from "../assets/a13.jpg";
-
 
 function Home() {
   return (
     <div className="relative h-screen w-full overflow-hidden" id="home">
       {/* Video Background */}
       <div className="absolute inset-0">
-        {/* <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute w-full h-full object-top"
-        >
-          <source src={vid} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
-        <img src={bgImg} alt='background image' className='absolute w-full h-full object-cover'/>
+        <img
+          src={bgImg}
+          alt="background image"
+          className="absolute w-full h-full object-cover"
+        />
         {/* Enhanced Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
       </div>
@@ -33,7 +27,7 @@ function Home() {
           className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           {/* Main Title with Animation */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -57,7 +51,9 @@ function Home() {
           >
             <div className="absolute inset-0 bg-black/30 backdrop-blur-sm rounded-2xl"></div>
             <p className="relative text-lg sm:text-xl md:text-2xl text-white/90 p-6 leading-relaxed">
-              Empowering young girls through education and providing them with the tools and opportunities they need to achieve self-actualization.
+              Empowering young girls through education and providing them with
+              the tools and opportunities they need to achieve
+              self-actualization.
             </p>
           </motion.div>
 
@@ -67,7 +63,7 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <a 
+            <a
               href="#about"
               className="group relative inline-flex items-center justify-center"
             >
@@ -90,7 +86,9 @@ function Home() {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center">
-            <span className="text-white/80 text-sm mb-2">Scroll to explore</span>
+            <span className="text-white/80 text-sm mb-2">
+              Scroll to explore
+            </span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -105,6 +103,7 @@ function Home() {
           </div>
         </motion.div>
       </div>
+      {/* <Chatbot /> */}
     </div>
   );
 }

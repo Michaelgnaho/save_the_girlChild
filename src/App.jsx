@@ -12,7 +12,7 @@ import "./main.css";
 import Newsletter from "./components/NewsLetter.jsx";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import ComfortChatbot from "./components/Chatbot.jsx";
+// import ComfortChatbot from "./components/Chatbot.jsx";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="">
+            <div className=" w-screen overflow-x-hidden">
               <NavBar />
               <Home />
               <About />
@@ -34,7 +34,7 @@ function App() {
               <Newsletter />
               <FAQ />
               <Footer />
-              <ComfortChatbot />
+              {/* <ComfortChatbot /> */}
             </div>
           }
         />

@@ -90,7 +90,7 @@ const ComfortChatbot = () => {
 
   return (
     isOpen && (
-      <div className="fixed bottom-6 right-3 z-50">
+      <div className="fixed bottom-6 right-3 z-50 overflow-hidden">
         <div
           className={`w-48 ${
             isExpanded ? "max-h-[500px]" : "max-h-16"
