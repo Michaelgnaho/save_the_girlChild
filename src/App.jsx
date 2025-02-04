@@ -21,7 +21,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="">
+            <div className="overflow-x-clip">
               <NavBar />
               <Home />
               <About />
