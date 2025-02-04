@@ -21,7 +21,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className=" w-screen overflow-x-hidden">
+            <div className="">
               <NavBar />
               <Home />
               <About />

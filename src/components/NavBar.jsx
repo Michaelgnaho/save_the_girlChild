@@ -31,7 +31,7 @@ function NavBar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 overflow-hidden ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white shadow-lg backdrop-blur-sm bg-opacity-95"
           : "bg-white"
