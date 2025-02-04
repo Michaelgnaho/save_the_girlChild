@@ -8,7 +8,6 @@ import NavBar from "./components/NavBar.jsx";
 import Project from "./components/Project.jsx";
 import Team from "./components/Team.jsx";
 import Testimonials from "./components/Testimonials.jsx";
-import Qr from "./components/Qr.jsx";
 import "./main.css";
 import Newsletter from "./components/NewsLetter.jsx";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
