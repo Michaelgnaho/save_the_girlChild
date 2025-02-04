@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import about1 from "../assets/educaion.jpg";
 import about2 from "../assets/health.jpg";
 import about3 from "../assets/a4.jpg";
@@ -14,13 +14,19 @@ function About() {
           </h2>
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-lg slide-left md:text-xl text-gray-700">
-              At Adunni Save A Girl Foundation, we are dedicated to nurturing and empowering young girls to achieve their dreams and build brighter futures.
+              At Adunni Save A Girl Foundation, we are dedicated to nurturing
+              and empowering young girls to achieve their dreams and build
+              brighter futures.
             </p>
             <p className="text-lg slide-right md:text-xl text-gray-700">
-              Currently focused on girls in Nigeria, we provide education, mentorship, and advocacy to nurture their potential, break barriers, and equip them with the knowledge, skills, and confidence needed for self-actualization.
+              Currently focused on girls in Nigeria, we provide education,
+              mentorship, and advocacy to nurture their potential, break
+              barriers, and equip them with the knowledge, skills, and
+              confidence needed for self-actualization.
             </p>
             <p className="text-lg slide-left md:text-xl text-gray-700">
-              As we grow, our goal is to expand this impact globally, creating a world where every girl can dream, achieve, and lead with purpose.
+              As we grow, our goal is to expand this impact globally, creating a
+              world where every girl can dream, achieve, and lead with purpose.
             </p>
           </div>
         </div>
@@ -30,25 +36,28 @@ function About() {
           {[
             {
               title: "Education",
-              description: "We are committed to providing young girls with access to quality education and the necessary learning resources, empowering them to unlock their full potential and achieve their dreams.",
-              image: about1
+              description:
+                "We are committed to providing young girls with access to quality education and the necessary learning resources, empowering them to unlock their full potential and achieve their dreams.",
+              image: about1,
             },
             {
               title: "Healthcare",
-              description: "We aim to ensure girls in underserved and rural areas have access to essential healthcare services, fostering their well-being and growth",
-              image: about2
+              description:
+                "We aim to ensure girls in underserved and rural areas have access to essential healthcare services, fostering their well-being and growth",
+              image: about2,
             },
             {
               title: "Empowerment",
-              description: "Through skill development and mentorship programs, we empower young girls to become confident, independent, and capable of building a brighter future for themselves and their communities",
-              image: about3
-            }
+              description:
+                "Through skill development and mentorship programs, we empower young girls to become confident, independent, and capable of building a brighter future for themselves and their communities",
+              image: about3,
+            },
           ].map((card, index) => (
             <div key={index} className="group slide-right relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
               <div className="relative bg-white p-6 rounded-2xl shadow-lg transform transition duration-300 ease-in-out group-hover:-translate-y-2">
                 <div className="overflow-hidden rounded-lg mb-6">
-                  <img 
+                  <img
                     src={card.image}
                     alt={`Icon representing ${card.title}`}
                     className="w-full h-48 object-cover transform transition duration-300 group-hover:scale-110"
@@ -57,9 +66,7 @@ function About() {
                 <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                   {card.title}
                 </h3>
-                <p className="text-gray-700">
-                  {card.description}
-                </p>
+                <p className="text-gray-700">{card.description}</p>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-xl"></div>
               </div>
             </div>
