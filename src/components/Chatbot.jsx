@@ -45,11 +45,9 @@ const ComfortChatbot = () => {
 
   const findBotResponse = (userMessage) => {
     const lowercaseMessage = userMessage.toLowerCase();
-
     const matchedResponse = foundationFAQs.find((faq) =>
       faq.keywords.some((keyword) => lowercaseMessage.includes(keyword))
     );
-
     return matchedResponse
       ? matchedResponse.response
       : "I'm here to help! Would you like to know more about our foundation's work in education, healthcare, or empowerment?";
@@ -58,22 +56,17 @@ const ComfortChatbot = () => {
   const handleSendMessage = () => {
     if (!message.trim()) return;
 
-    const newUserMessage = {
-      id: messages.length + 1,
-      text: message,
-      sender: "user",
-    };
-
-    setMessages((prev) => [...prev, newUserMessage]);
-
-    const botResponse = findBotResponse(message);
+    setMessages((prev) => [
+      ...prev,
+      { id: prev.length + 1, text: message, sender: "user" },
+    ]);
 
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
         {
           id: prev.length + 2,
-          text: botResponse,
+          text: findBotResponse(message),
           sender: "bot",
           avatar: "https://avatar.iran.liara.run/public/99",
           name: "Sarah",
@@ -84,23 +77,17 @@ const ComfortChatbot = () => {
     setMessage("");
   };
 
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
   return (
     isOpen && (
-      <div className="fixed bottom-4 right-2 z-50 overflow-y-scroll">
+      <div className="fixed bottom-4 right-2 z-50">
         <div
-          className={`w-48 ${
-            isExpanded ? "max-h-[600px]" : "max-h-16"
-          } bg-white rounded-lg shadow-lg border transition-all duration-300`}
+          className={`w-full max-w-xs sm:max-w-sm md:max-w-md bg-white rounded-lg shadow-lg border transition-all duration-300 ${
+            isExpanded ? "max-h-[80vh]" : "max-h-16"
+          }`}
         >
           {/* Header */}
           <div
-            className={`bg-orange-500 text-white p-3 flex justify-between items-center rounded-t-lg cursor-pointer ${
-              isExpanded ? "rounded-b-none" : ""
-            }`}
+            className={`bg-orange-500 text-white p-3 flex justify-between items-center rounded-t-lg cursor-pointer`}
             onClick={() => setIsExpanded((prev) => !prev)}
           >
             <div className="flex items-center space-x-2">
@@ -115,10 +102,8 @@ const ComfortChatbot = () => {
               </div>
             </div>
             <button
-              onClick={handleClose}
-              className={`text-white hover:text-gray-300 ${
-                isExpanded ? "rotate-180" : ""
-              }`}
+              onClick={() => setIsOpen(false)}
+              className="text-white hover:text-gray-300"
             >
               <X size={16} />
             </button>
@@ -126,7 +111,7 @@ const ComfortChatbot = () => {
 
           {/* Chat Content */}
           {isExpanded && (
-            <div className="p-4 space-y-4 overflow-y-auto h-[400px]">
+            <div className="p-4 space-y-4 overflow-y-auto max-h-[60vh]">
               {messages.map((msg) => (
                 <div
                   key={msg.id}
@@ -142,7 +127,7 @@ const ComfortChatbot = () => {
                     />
                   )}
                   <div
-                    className={`p-3 rounded-lg max-w-[70%] ${
+                    className={`p-3 rounded-lg max-w-[75%] ${
                       msg.sender === "bot"
                         ? "bg-orange-50 text-gray-800"
                         : "bg-orange-500 text-white"
@@ -156,7 +141,7 @@ const ComfortChatbot = () => {
                   {msg.sender === "user" && (
                     <img
                       src="https://avatar.iran.liara.run/public/job/operator/female"
-                      alt="Avatar of Sarah"
+                      alt="User"
                       className="w-8 h-8 rounded-full"
                     />
                   )}
@@ -167,7 +152,7 @@ const ComfortChatbot = () => {
 
           {/* Message Input */}
           {isExpanded && (
-            <div className="border-t p-3 flex items-center pb-5 space-x-3">
+            <div className="border-t p-3 flex items-center pb-5 space-x-3 bg-white sticky bottom-0">
               <input
                 type="text"
                 value={message}
@@ -178,7 +163,7 @@ const ComfortChatbot = () => {
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-orange-500 text-white p-2 rounded-lg hover:bg-orange-600"
+                className="bg-orange-500 text-white p-2 rounded-lg hover:bg-orange-600 flex-shrink-0"
               >
                 <Send size={16} />
               </button>
