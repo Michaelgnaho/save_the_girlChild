@@ -39,8 +39,7 @@ function App() {
             </div>
           }
         />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signUp" element={<Register />} />
+
         <Route
           path="*"
           element={
