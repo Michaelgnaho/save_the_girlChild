@@ -79,7 +79,7 @@ const ComfortChatbot = () => {
 
   return (
     isOpen && (
-      <div className="fixed bottom-4 right-2 z-50 overflow-hidden">
+      <div className="fixed bottom-4 right-2 z-50 ">
         <div
           className={`w-full max-w-xs sm:max-w-sm md:max-w-md bg-white rounded-lg shadow-lg border transition-all duration-300 ${
             isExpanded ? "max-h-[80vh]" : "max-h-16"
@@ -151,15 +151,16 @@ const ComfortChatbot = () => {
           )}
 
           {/* Message Input */}
+          {/* Message Input */}
           {isExpanded && (
-            <div className="border-t p-3 flex items-center pb-5 space-x-3 bg-white sticky bottom-0 w-[100px]">
+            <div className="border-t p-3 flex items-center pb-5 space-x-2">
               <input
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                 placeholder="Type your message..."
-                className="flex-grow bg-gray-100 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="flex-grow w-full min-w-0 bg-gray-100 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <button
                 onClick={handleSendMessage}
