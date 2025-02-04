@@ -152,7 +152,7 @@ const ComfortChatbot = () => {
 
           {/* Message Input */}
           {isExpanded && (
-            <div className="border-t p-3 flex items-center pb-5 space-x-3 bg-white sticky bottom-0 w-1/2">
+            <div className="border-t p-3 flex items-center pb-5 space-x-3 bg-white sticky bottom-0 w-[100px]">
               <input
                 type="text"
                 value={message}
