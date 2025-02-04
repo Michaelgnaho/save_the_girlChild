@@ -93,7 +93,7 @@ const ComfortChatbot = () => {
       <div className="fixed bottom-4 right-2 z-50 overflow-hidden">
         <div
           className={`w-48 ${
-            isExpanded ? "max-h-[500px]" : "max-h-16"
+            isExpanded ? "max-h-[600px]" : "max-h-16"
           } bg-white rounded-lg shadow-lg border transition-all duration-300`}
         >
           {/* Header */}
@@ -167,7 +167,7 @@ const ComfortChatbot = () => {
 
           {/* Message Input */}
           {isExpanded && (
-            <div className="border-t p-3 flex items-center space-x-3">
+            <div className="border-t p-3 flex items-center pb-5 space-x-3">
               <input
                 type="text"
                 value={message}
