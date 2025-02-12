@@ -1,80 +1,18 @@
+//
+
 import React, { useState } from "react";
-import { MessageCircle, Send, X } from "lucide-react";
+import { X } from "lucide-react";
 
 const ComfortChatbot = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      text: "Hi, I'm Sarah. How can I assist you today?",
-      sender: "bot",
-      avatar: "https://avatar.iran.liara.run/public/99",
-      name: "Sarah",
-    },
-  ]);
 
-  const foundationFAQs = [
-    {
-      keywords: ["education", "school", "learn"],
-      response:
-        "Our education programs focus on providing quality learning resources for girls in Nigeria. We believe every girl deserves access to education that empowers her future.",
-    },
-    {
-      keywords: ["donate", "support", "help"],
-      response:
-        "Thank you for your interest in supporting our mission! We accept donations that directly fund educational resources, healthcare, and empowerment programs for girls. Would you like information on how to contribute?",
-    },
-    {
-      keywords: ["healthcare", "health", "medical"],
-      response:
-        "We provide essential healthcare services to girls in underserved and rural areas, ensuring their well-being and supporting their overall growth and development.",
-    },
-    {
-      keywords: ["volunteer", "help", "join"],
-      response:
-        "We welcome passionate volunteers who want to make a difference in girls' lives! We have various opportunities for mentorship, skill sharing, and community support.",
-    },
-    {
-      keywords: ["mission", "goal", "purpose"],
-      response:
-        "Our mission is to empower young girls in Nigeria by providing education, healthcare, and skills development. We aim to break barriers and help girls achieve their full potential.",
-    },
-  ];
-
-  const findBotResponse = (userMessage) => {
-    const lowercaseMessage = userMessage.toLowerCase();
-    const matchedResponse = foundationFAQs.find((faq) =>
-      faq.keywords.some((keyword) => lowercaseMessage.includes(keyword))
-    );
-    return matchedResponse
-      ? matchedResponse.response
-      : "I'm here to help! Would you like to know more about our foundation's work in education, healthcare, or empowerment?";
-  };
-
-  const handleSendMessage = () => {
-    if (!message.trim()) return;
-
-    setMessages((prev) => [
-      ...prev,
-      { id: prev.length + 1, text: message, sender: "user" },
-    ]);
-
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: prev.length + 2,
-          text: findBotResponse(message),
-          sender: "bot",
-          avatar: "https://avatar.iran.liara.run/public/99",
-          name: "Sarah",
-        },
-      ]);
-    }, 500);
-
-    setMessage("");
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+      setIsExpanded(false);
+    }
   };
 
   return (
@@ -102,7 +40,10 @@ const ComfortChatbot = () => {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
               className="text-white hover:text-gray-300"
             >
               <X size={16} />
@@ -112,61 +53,31 @@ const ComfortChatbot = () => {
           {/* Chat Content */}
           {isExpanded && (
             <div className="p-4 space-y-4 overflow-y-auto max-h-[60vh]">
-              {messages.map((msg) => (
-                <div
-                  key={msg.id}
-                  className={`flex items-start space-x-3 ${
-                    msg.sender === "bot" ? "justify-start" : "justify-end"
-                  }`}
-                >
-                  {msg.sender === "bot" && (
-                    <img
-                      src={msg.avatar}
-                      alt={msg.name}
-                      className="w-8 h-8 rounded-full"
-                    />
-                  )}
-                  <div
-                    className={`p-3 rounded-lg max-w-[75%] ${
-                      msg.sender === "bot"
-                        ? "bg-orange-50 text-gray-800"
-                        : "bg-orange-500 text-white"
-                    }`}
-                  >
-                    {msg.sender === "bot" && (
-                      <div className="font-medium mb-1">{msg.name}</div>
-                    )}
-                    <div>{msg.text}</div>
+              <div className="flex items-start space-x-3 justify-start">
+                <img
+                  src="https://avatar.iran.liara.run/public/99"
+                  alt="Sarah"
+                  className="w-8 h-8 rounded-full"
+                />
+                <div className="p-3 rounded-lg max-w-[75%] bg-orange-50 text-gray-800">
+                  <div className="font-medium mb-1">Sarah</div>
+                  <div>
+                    Hello! Would you like to get in touch with us? Click the
+                    button below to go to our contact section.
                   </div>
-                  {msg.sender === "user" && (
-                    <img
-                      src="https://avatar.iran.liara.run/public/job/operator/female"
-                      alt="User"
-                      className="w-8 h-8 rounded-full"
-                    />
-                  )}
                 </div>
-              ))}
+              </div>
             </div>
           )}
 
-          {/* Message Input */}
-          {/* Message Input */}
+          {/* Contact Button */}
           {isExpanded && (
-            <div className="border-t p-3 flex items-center pb-5 space-x-2">
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-                placeholder="Type your message..."
-                className="flex-grow w-full min-w-0 bg-gray-100 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-              />
+            <div className="border-t p-3 flex items-center pb-5 justify-center">
               <button
-                onClick={handleSendMessage}
-                className="bg-orange-500 text-white p-2 rounded-lg hover:bg-orange-600 flex-shrink-0"
+                onClick={scrollToContact}
+                className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
               >
-                <Send size={16} />
+                Contact Us
               </button>
             </div>
           )}

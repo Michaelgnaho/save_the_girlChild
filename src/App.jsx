@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import CTA from "./components/CTA.jsx";
@@ -8,11 +9,9 @@ import NavBar from "./components/NavBar.jsx";
 import Project from "./components/Project.jsx";
 import Team from "./components/Team.jsx";
 import Testimonials from "./components/Testimonials.jsx";
-import "./main.css";
 import Newsletter from "./components/NewsLetter.jsx";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
-// import ComfortChatbot from "./components/Chatbot.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./main.css";
 
 function App() {
   return (
@@ -21,30 +20,54 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="overflow-x-clip">
-              <NavBar />
-              <Home />
-              <About />
-              <Project />
-              <Testimonials />
-              <Team />
-              <CTA />
-              <Contact />
-              {/* <Qr/> */}
-              <Newsletter />
-              <FAQ />
-              <Footer />
-              {/* <ComfortChatbot /> */}
-            </div>
+            <>
+              <Helmet>
+                <title>ADUNNI SAVE A GIRL FOUNDATION - Home</title>
+                <meta
+                  name="description"
+                  content="Empowering young girls through education, mentorship, and community support. Learn about our programs and how you can contribute to girl child education."
+                />
+                <meta
+                  name="keywords"
+                  content="girl education, women empowerment, NGO, foundation, education charity"
+                />
+                <link rel="canonical" href="https://your-domain.com" />
+              </Helmet>
+              <div className="overflow-x-clip">
+                <NavBar />
+                <Home />
+                <About />
+                <Project />
+                <Testimonials />
+                <Team />
+                <CTA />
+                <Contact />
+                <Newsletter />
+                <FAQ />
+                <Footer />
+              </div>
+            </>
           }
         />
 
         <Route
           path="*"
           element={
-            <div className="text-5xl justify-center items-center flex ">
-              404 Not Found
-            </div>
+            <>
+              <Helmet>
+                <title>
+                  404 - Page Not Found | ADUNNI SAVE A GIRL FOUNDATION
+                </title>
+                <meta
+                  name="description"
+                  content="The page you're looking for cannot be found. Return to Adunni Save a Girl Foundation's homepage."
+                />
+                <meta name="robots" content="noindex, follow" />
+              </Helmet>
+              <div className="text-5xl justify-center items-center flex min-h-screen">
+                404 Not Found
+              </div>
+            </>
           }
         />
       </Routes>

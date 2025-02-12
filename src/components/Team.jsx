@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import AH from "../assets/Ah.jpg";
 import PO from "../assets/giwa.jpg";
 import RMG from "../assets/philips.jpg";
+import Ade from "../assets/adeniji.jpg";
 
 const teamMembers = [
   {
-    name: "Comfort Olaofare",
+    name: "Comfort Olafare",
     role: "Founder & CEO",
     description:
       "comfort has been leading the foundation since its inception, driving initiatives to support and empower young girls in Nigeria.",
@@ -25,6 +26,13 @@ const teamMembers = [
     description:
       "Overseeing the organization’s operations, ensuring the effective implementation of programs that empower, educate, and advocate for the rights of the girl child.",
     image: RMG,
+  },
+  {
+    name: "Adeniji Theophilus Adeboye",
+    role: "Finance Secretary",
+    description:
+      "⁠Oversees financial management, planning, and strategy, ensuring organizational financial stability and growth alongside with finance secretary.",
+    image: Ade,
   },
 ];
 
