@@ -31,7 +31,10 @@ function App() {
                   name="keywords"
                   content="girl education, women empowerment, NGO, foundation, education charity"
                 />
-                <link rel="canonical" href="https://your-domain.com" />
+                <link
+                  rel="canonical"
+                  href="https://www.adunni-save-a-girl-foundation.com.ng"
+                />
               </Helmet>
               <div className="overflow-x-clip">
                 <NavBar />
