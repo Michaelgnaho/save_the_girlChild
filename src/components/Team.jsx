@@ -1,38 +1,53 @@
-import React from "react";
 import { motion } from "framer-motion";
 import AH from "../assets/Ah.jpg";
-import PO from "../assets/giwa.jpg";
-import RMG from "../assets/philips.jpg";
-import Ade from "../assets/adeniji.jpg";
+import IMG_OLUWASEUN from "../assets/IMG_OLUWASEUN.jpg";
+import IMG_MARIAM from "../assets/IMG_MARIAM.jpg";
+import IMG_SIMISOLA from "../assets/IMG_SIMISOLA.jpg";
+import IMG_SEGUN from "../assets/IMG_SEGUN.jpg";
+import IMG_BLESSING from "../assets/IMG_BLESSING.jpg";
 
 const teamMembers = [
   {
     name: "Comfort Olafare",
     role: "Founder & CEO",
     description:
-      "comfort has been leading the foundation since its inception, driving initiatives to support and empower young girls in Nigeria.",
+      "Comfort has been leading the foundation since its inception, driving initiatives to support and empower young girls in Nigeria.",
     image: AH,
   },
   {
-    name: "Rukayah Motunrayo Giwa",
-    role: "Project Director",
+    name: "Oluwaseun Ajayi",
+    role: "Director of Communications and Digital Strategy",
     description:
-      "Rukayat oversees all programs and ensures they align with the foundation's mission to educate and protect young girls.",
-    image: PO,
+      "Oluwaseun oversees all communication efforts and digital initiatives, ensuring impactful storytelling and strategic online presence for the foundation.",
+    image: IMG_OLUWASEUN, // replace with actual image import
   },
   {
-    name: "Phillips Olatunde (PO)",
-    role: "Community Outreach Coordinator",
+    name: "Mariam Ogboye",
+    role: "Director of International Grants & Resource Mobilization",
     description:
-      "Overseeing the organization’s operations, ensuring the effective implementation of programs that empower, educate, and advocate for the rights of the girl child.",
-    image: RMG,
+      "Mariam leads global grant acquisition and resource mobilization strategies, strengthening the foundation’s international partnerships.",
+    image: IMG_MARIAM, // replace with actual image import
   },
   {
-    name: "Adeniji Theophilus Adeboye",
-    role: "Finance Secretary",
+    name: "Oduolowu Simisola",
+    role: "Director of Research and Advocacy",
     description:
-      "⁠Oversees financial management, planning, and strategy, ensuring organizational financial stability and growth alongside with finance secretary.",
-    image: Ade,
+      "Simisola oversees research initiatives and advocacy programs, using data-driven insights to influence positive societal change.",
+    image: IMG_SIMISOLA, // replace with actual image import
+  },
+  {
+    name: "Abdulhakeem ‘Segun Agbaje",
+    role: "Director of Fundraising & Partnership",
+    description:
+      "Segun manages fundraising campaigns and strategic partnerships, supporting project growth and sustainable impact.",
+    image: IMG_SEGUN, // replace with actual image import
+  },
+  {
+    name: "Oluwagbami Blessing",
+    role: "Director of Programs & Outreach",
+    description:
+      "Blessing leads the planning and execution of programs and outreach initiatives, ensuring effective engagement with communities.",
+    image: IMG_BLESSING, // replace with actual image import
   },
 ];
 

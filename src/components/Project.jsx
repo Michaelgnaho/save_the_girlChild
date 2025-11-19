@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "framer-motion";
 import p1 from "../assets/a6.jpg";
 import p2 from "../assets/A1.jpg";
 import p3 from "../assets/a12.jpg";
@@ -11,68 +10,86 @@ const Project = () => {
   const [activeCard, setActiveCard] = useState(null);
 
   const projectsByYear = {
-    "2025": [
+    2025: [
       {
         title: "Educational Scholarships",
-        description: "Expanding our scholarship program to reach 1000+ underprivileged girls across multiple states.",
+        description:
+          "Expanding our scholarship program to reach 1000+ underprivileged girls across multiple states.",
         icon: "fas fa-graduation-cap",
         stats: "Target: 1000+ scholarships",
         impact: "Expected 90% graduation rate",
-        img: p1
+        img: p1,
       },
       {
         title: "Pad A Girl 2025",
-        description: "Launching our largest healthcare initiative yet, targeting 20,000 girls.",
+        description:
+          "Launching our largest healthcare initiative yet, targeting 20,000 girls.",
         icon: "fas fa-heartbeat",
         stats: "20,000 girls target",
         impact: "Expected 85% health improvement",
-        img: p2
-      }
+        img: p2,
+      },
+      {
+        title: "Menstrual Hygiene Project Outreach",
+        description:
+          "At Adunni Save A Girl Foundation, our recent survey revealed that many girls lack menstrual hygiene education and access to sanitary pads. To address this, we launched our Menstrual Hygiene Project at Zumuratul Islammiyah Grammar School, reaching over 1,000 girls with menstrual hygiene education and free sanitary pads. This outreach is part of our commitment to promoting dignity, confidence, and equal opportunities for every girl.",
+        icon: "fas fa-hand-holding-heart",
+        stats: "1,000+ girls reached",
+        impact: "Improved menstrual hygiene awareness & dignity",
+        img: p1, // replace with actual image variable
+        video: "WATCH_HIGHLIGHTS_VIDEO_URL", // optional if you want a video field
+      },
     ],
-    "2024": [
+
+    2024: [
       {
         title: "Skill Development Program",
-        description: "Introducing advanced vocational training programs with industry partnerships.",
+        description:
+          "Introducing advanced vocational training programs with industry partnerships.",
         icon: "fas fa-tools",
         stats: "30+ skill programs",
         impact: "85% employment rate",
-        img: p3
+        img: p3,
       },
       {
         title: "National Awareness Campaign",
-        description: "Nationwide advocacy program for girl child education and rights.",
+        description:
+          "Nationwide advocacy program for girl child education and rights.",
         icon: "fas fa-bullhorn",
         stats: "150+ campaigns",
         impact: "2M+ people reached",
-        img: p4
-      }
+        img: p4,
+      },
     ],
-    "2023": [
+    2023: [
       {
         title: "Annual Conference 2023",
-        description: "Hosted our largest conference focusing on girl child empowerment.",
+        description:
+          "Hosted our largest conference focusing on girl child empowerment.",
         icon: "fas fa-shield-alt",
         stats: "75+ events completed",
         impact: "7500+ participants",
-        img: p5
+        img: p5,
       },
       {
         title: "Community Outreach",
-        description: "Established local support networks in underserved communities.",
+        description:
+          "Established local support networks in underserved communities.",
         icon: "fas fa-users",
         stats: "50+ communities served",
         impact: "10,000+ lives impacted",
-        img: p1
-      }
+        img: p1,
+      },
     ],
-    "2022": [
+    2022: [
       {
         title: "Foundation Launch",
-        description: "Successfully launched Adunni Save A Girl Foundation with initial programs.",
+        description:
+          "Successfully launched Adunni Save A Girl Foundation with initial programs.",
         icon: "fas fa-flag",
         stats: "5 initial programs",
         impact: "1000+ girls supported",
-        img: p2
+        img: p2,
       },
       {
         title: "Pilot Scholarship Program",
@@ -80,13 +97,16 @@ const Project = () => {
         icon: "fas fa-graduation-cap",
         stats: "100 scholarships awarded",
         impact: "95% retention rate",
-        img: p3
-      }
-    ]
+        img: p3,
+      },
+    ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-orange-50 py-16" id="programs">
+    <div
+      className="min-h-screen bg-gradient-to-b from-white to-orange-50 py-16"
+      id="programs"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,23 +117,27 @@ const Project = () => {
             Our Journey & Impact
           </h2>
           <div className="w-32 h-2 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 mx-auto rounded-full mb-12"></div>
-          
+
           {/* Year Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {Object.keys(projectsByYear).reverse().map((year) => (
-              <motion.button
-                key={year}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveTab(year)}
-                className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 
-                  ${activeTab === year 
-                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg' 
-                    : 'bg-white text-gray-600 hover:bg-orange-50'}`}
-              >
-                {year}
-              </motion.button>
-            ))}
+            {Object.keys(projectsByYear)
+              .reverse()
+              .map((year) => (
+                <motion.button
+                  key={year}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveTab(year)}
+                  className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 
+                  ${
+                    activeTab === year
+                      ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg"
+                      : "bg-white text-gray-600 hover:bg-orange-50"
+                  }`}
+                >
+                  {year}
+                </motion.button>
+              ))}
           </div>
         </motion.div>
 
@@ -134,17 +158,17 @@ const Project = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group"
               >
-                <div 
+                <div
                   className={`h-full bg-white rounded-2xl overflow-hidden transform transition-all duration-300 
-                    ${activeCard === index ? 'scale-105' : 'hover:scale-105'}
+                    ${activeCard === index ? "scale-105" : "hover:scale-105"}
                     shadow-lg hover:shadow-2xl border border-orange-100`}
                   onMouseEnter={() => setActiveCard(index)}
                   onMouseLeave={() => setActiveCard(null)}
                 >
                   {/* Image Container */}
                   <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={project.img} 
+                    <img
+                      src={project.img}
                       alt={project.title}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                     />
@@ -163,8 +187,10 @@ const Project = () => {
                       <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 mb-4">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 mb-6">{project.description}</p>
-                      
+                      <p className="text-gray-600 mb-6">
+                        {project.description}
+                      </p>
+
                       <div className="border-t border-orange-100 pt-4 mt-auto">
                         <div className="flex justify-between text-sm">
                           <div className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">
