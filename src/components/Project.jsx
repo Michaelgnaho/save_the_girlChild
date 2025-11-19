@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import p1 from "../assets/a6.jpg";
 import p2 from "../assets/A1.jpg";
