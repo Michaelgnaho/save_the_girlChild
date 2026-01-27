@@ -37,17 +37,23 @@ function App() {
                 />
               </Helmet>
               <div className="overflow-x-clip">
-                <NavBar />
-                <Home />
-                <About />
-                <Project />
-                <Testimonials />
-                <Team />
-                <CTA />
-                <Contact />
-                <Newsletter />
-                <FAQ />
-                <Footer />
+                <div className="bg-white">
+                  <h2 className="text-2xl text-blue-950">
+                    Domain name has expired! <br />
+                    Kindly renew the domain name. Thank You
+                  </h2>
+                  {/* <NavBar />
+                  <Home />
+                  <About />
+                  <Project />
+                  <Testimonials />
+                  <Team />
+                  <CTA />
+                  <Contact />
+                  <Newsletter />
+                  <FAQ />
+                  <Footer /> */}
+                </div>
               </div>
             </>
           }
