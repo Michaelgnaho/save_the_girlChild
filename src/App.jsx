@@ -38,9 +38,11 @@ function App() {
               </Helmet>
               <div className="overflow-x-clip">
                 <div className="bg-white">
-                  <h2 className="text-2xl text-blue-950">
+                  <h2 className="text-2xl text-blue-950 text-center">
                     Domain name has expired! <br />
-                    Kindly renew the domain name. Thank You
+                    <h3 className="text-red-600">
+                      Kindly renew the domain name. Thank You
+                    </h3>
                   </h2>
                   {/* <NavBar />
                   <Home />
