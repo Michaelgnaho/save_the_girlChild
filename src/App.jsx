@@ -38,13 +38,7 @@ function App() {
               </Helmet>
               <div className="overflow-x-clip">
                 <div className="bg-white">
-                  <h2 className="text-2xl text-blue-950 text-center">
-                    Domain name has expired! <br />
-                    <h3 className="text-red-600">
-                      Kindly renew the domain name. Thank You
-                    </h3>
-                  </h2>
-                  {/* <NavBar />
+                  <NavBar />
                   <Home />
                   <About />
                   <Project />
@@ -54,7 +48,7 @@ function App() {
                   <Contact />
                   <Newsletter />
                   <FAQ />
-                  <Footer /> */}
+                  <Footer />
                 </div>
               </div>
             </>
